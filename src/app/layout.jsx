@@ -14,9 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${PoppinsFont.className}`}>
+      <body className={`${PoppinsFont.className} flex flex-col`}>
         <Navbar />
-        <main className='w-[360px] mx-auto'>
+        <main className='w-max-[500px] w-min-[360px] w-full mx-auto'>
           {children}
         </main>
       </body>
