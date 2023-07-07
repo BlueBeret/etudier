@@ -2,5 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* create body width for phone tablet and desktop */
+@layer components {
+    .navbar-container > * {
+    @apply p-4 ;
+}
+}

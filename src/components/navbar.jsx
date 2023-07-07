@@ -5,10 +5,9 @@ import Link from 'next/link'
     
 
 export default function Navbar(params) {
-    return <div>
-        <nav>
-            <ul>
-                <li>
+    return <nav className="w-full">
+            <ul className="w-full">
+                <li className="navbar-container w-full flex flex-row gap-10 justify-center">
                     <Link href="/">
                         Home
                     </Link>
@@ -24,5 +23,4 @@ export default function Navbar(params) {
                 </li>
             </ul>
         </nav>
-    </div>
 }
