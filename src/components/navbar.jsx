@@ -14,7 +14,7 @@ const JustAnotherHandFont = Just_Another_Hand({
 export default function Navbar(params) {
     const pathname = usePathname()
 
-    return <nav className="w-full bg-secondary text-primary px-2 sm:px-6 py-2 sm:h-16">
+    return <nav className="w-full flex flex-row items-center bg-secondary text-primary px-2 sm:px-6 py-2 sm:h-16">
         <ul className="w-full flex flex-row items-center">
             <li>
                 <h1 className={`${JustAnotherHandFont.className} text-4xl text-center hidden sm:block hover:cursor-pointer`} onClick={()=> document.location="/"}>

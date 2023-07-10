@@ -4,7 +4,7 @@
 
 @layer components {
     .navbar-container>* {
-        @apply px-4 py-2 overflow-hidden max-w-[80px] sm:max-w-[900px] transition-all duration-500 ease-in-out;
+        @apply px-4 py-2 overflow-hidden max-w-[76px] sm:max-w-[900px] transition-all duration-500 ease-in-out;
     }
 }
 
@@ -21,4 +21,21 @@
     color:white;
     background-size: 100% 2px;
     background-position: 0 100%
+}
+
+@layer utilities {
+    .link {
+        @apply font-semibold text-base text-accent;
+        border-bottom-width: 0;
+        background-image: linear-gradient(transparent, transparent), linear-gradient(#606C38, #606c38);
+        background-size: 0 2px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size .25s ease-in-out;
+    }
+
+    .link:hover {
+        background-size: 100% 2px;
+        background-position: 0 100%
+    }
 }
