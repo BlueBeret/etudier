@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${PoppinsFont.className} flex flex-col bg-primary`}>
         <Navbar />
-        <main className='w-max-[500px] w-min-[360px] w-full mx-auto'>
+        <main className='w-max-[500px] w-min-[360px] w-full mx-auto px-4'>
           {children}
         </main>
         <Footer/>
