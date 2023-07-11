@@ -1,15 +1,17 @@
+"use client"
 import Login from '@/components/Home/Login'
 import Main from '@/components/Home/Main'
 import { Just_Another_Hand } from 'next/font/google'
+import { useState } from 'react'
 
 const JustAnotherHandFont = Just_Another_Hand({
   subsets: ['latin'],
   weight: ['400'],
 })
 export default function Home() {
-  function alreadyLogin() {
-    return true
-  }
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [semester, setSemester] = useState({})
+  const [name, setName] = useState('')
   return (
     <div className='flex flex-col gap-6 pt-12 items-center'>
       <div className='flex flex-col gap-2'>
@@ -17,8 +19,8 @@ export default function Home() {
         <h2 className='text-center text-base'>Get your fancy study result card, exclusive for UGM students</h2>
       </div>
       {
-        alreadyLogin() ? (<Main/>) :
-        <Login/>
+        isLoggedIn ? (<Main name={name} setName={setName} />) :
+          <Login setIsLoggedIn={setIsLoggedIn} setName={setName} setSemester={setSemester} />
       }
     </div>
   )
