@@ -7,8 +7,8 @@ const JustAnotherHandFont = Just_Another_Hand({
 })
 export default function Home() {
   return (
-    <div className='flex flex-col gap-6 pt-12'>
-      <div>
+    <div className='flex flex-col gap-6 pt-12 items-center'>
+      <div className='flex flex-col gap-2'>
         <h1 className={JustAnotherHandFont.className + ' text-6xl font-bold text-center'}>Étudier</h1>
         <h2 className='text-center text-base'>Get your fancy study result card, exclusive for UGM students</h2>
       </div>
