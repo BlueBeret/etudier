@@ -2,9 +2,8 @@
 import Link from "next/link"
 import { useState } from "react"
 
-export default function Main(params) {
-    const [name, setName] = useState("")
-    const [semester, setSemester] = useState(0)
+export default function Main({name, setName, semester, setSemester}) {
+    const [currentSemester, setCurrentSemester] = useState(0)
     const [theme, setTheme] = useState(0)
 
     const handlePrint = ()=> {
@@ -12,7 +11,7 @@ export default function Main(params) {
     }
     return <div className="flex flex-col w-full items-center gap-3">
         <input placeholder="Your Name" className="input-text" value={name} onChange={(e)=> setName(e.target.value)}></input>
-        <select className={`input-select ${semester == 0? "text-gray-400":""}`} value={semester} onChange={(e) => setSemester(e.target.value)}>
+        <select className={`input-select ${currentSemester == 0? "text-gray-400":""}`} value={currentSemester} onChange={(e) => setCurrentSemester(e.target.value)}>
             <option value={0} disabled>choose semester</option>
             <option className="text-secondary">2021/2022 - Genap</option>
         </select>

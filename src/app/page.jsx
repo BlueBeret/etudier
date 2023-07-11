@@ -19,7 +19,7 @@ export default function Home() {
         <h2 className='text-center text-base'>Get your fancy study result card, exclusive for UGM students</h2>
       </div>
       {
-        isLoggedIn ? (<Main name={name} setName={setName} />) :
+        isLoggedIn? (<Main name={name} setName={setName} semester={semester} />) :
           <Login setIsLoggedIn={setIsLoggedIn} setName={setName} setSemester={setSemester} />
       }
     </div>
