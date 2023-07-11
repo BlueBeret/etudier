@@ -18,6 +18,13 @@
     .btn-primary:hover {
         @apply filter brightness-110;
     }
+
+    .input-select {
+        @apply w-[300px] text-secondary bg-primary py-2 border border-secondary rounded-2xl focus:outline-none ;
+        @apply px-4 appearance-none;
+        -webkit-appearance: none;
+        -moz-appearance: none; 
+    }
 }
 
 .link-underline {

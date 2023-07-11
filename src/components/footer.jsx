@@ -20,7 +20,7 @@ const footerLink = [
 ]
 
 export default function footer(params) {
-    return <div className="flex flex-col gap-2 w-full max-w-[500px] min-w-[360px] mx-auto items-center border-t-accent border-t-2 py-[10px] mt-6">
+    return <div className="flex flex-col gap-2 w-[90%] max-w-lg mx-auto items-center border-t-accent border-t-2 py-[10px] mt-6">
         <div>
             <span >Étudier</span> by <Link className="link" href="https://lurifos.dev">
                 Lurifos</Link> &copy; 2023
