@@ -42,10 +42,10 @@ export default function Login(params) {
     }
     return <div className="flex flex-col w-full items-center gap-3">
         <div className="flex flex-col gap-1 ">
-            <input placeholder="ugm id" className="input-text" value={ugmId} onChange={(e) => setUgmId(e.target.value)}></input>
+            <input placeholder="ugm id" name="username" className="input-text" value={ugmId} onChange={(e) => setUgmId(e.target.value)}></input>
             <label className="text-secondary opacity-50">*without @mail.ugm.ac.id</label>
         </div>
-        <input placeholder="password" type="password" className="input-text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+        <input placeholder="password" name="password" type="password" className="input-text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
         <div className="w-[300px] flex justify-end">
             <button className="btn-primary" onClick={handleLogin}>Login</button>
         </div>

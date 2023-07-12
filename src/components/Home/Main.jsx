@@ -13,7 +13,13 @@ export default function Main({name, setName, semester, setSemester}) {
         <input placeholder="Your Name" className="input-text" value={name} onChange={(e)=> setName(e.target.value)}></input>
         <select className={`input-select ${currentSemester == 0? "text-gray-400":""}`} value={currentSemester} onChange={(e) => setCurrentSemester(e.target.value)}>
             <option value={0} disabled>choose semester</option>
-            <option className="text-secondary">2021/2022 - Genap</option>
+            {semester.map((item, index) => {
+                if (item.id == '') {
+                    return
+                }
+                return <option value={item.id} key={index} className="text-secondary">{item.name}</option>
+            })
+        }
         </select>
         <select className="input-select" value={theme} onChange={(e)=> setTheme(e.target.value)}>
             <option value={0}>Default Theme</option>
