@@ -30,10 +30,12 @@ export async function POST(req) {
         if (res.status === 200) {
             const data = await res.json()
             let cookie = res.headers.get('set-cookie')
-            console.log(cookie)
-            let token = `${cookie}_${a_id}`
+            let une_token = {
+                cookie: cookie,
+                a_id: a_id
+            }
 
-            token = encrypt(token)
+            const token = encrypt(JSON.stringify(une_token))
 
             // get avaiable semester
 
@@ -52,14 +54,15 @@ export async function POST(req) {
             }), {
                 status: 200,
                 headers: {
-                    "Set-Cookie": `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict;`,
+                    "Set-Cookie": `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; expires=${new Date(Date.now() + 1000 * 60 * 60 * 24).toUTCString()}`,
                     "Content-Type": "application/json",
                 }
             })
 
         } else {
             return new Response(JSON.stringify({
-                status: "error"
+                status: "error",
+                message: "Your username or password is incorrect"
             }), {
                 status: 400,
             })
@@ -68,7 +71,8 @@ export async function POST(req) {
     } catch (error) {
         console.log(error);
         return new Response(JSON.stringify({
-            status: "error"
+            status: "error",
+            message: "Something went wrong on our side, if this problem persists please contact us"
         }), {
             status: 500,
         })
