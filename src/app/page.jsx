@@ -12,6 +12,7 @@ export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [semester, setSemester] = useState({})
   const [name, setName] = useState('')
+  const [orderNo, setOrderNo] = useState('')
   return (
     <div className='flex flex-col gap-6 pt-12 items-center'>
       <div className='flex flex-col gap-2'>
@@ -19,8 +20,8 @@ export default function Home() {
         <h2 className='text-center text-base'>Get your fancy study result card, exclusive for UGM students</h2>
       </div>
       {
-        isLoggedIn? (<Main name={name} setName={setName} semester={semester} />) :
-          <Login setIsLoggedIn={setIsLoggedIn} setName={setName} setSemester={setSemester} />
+        isLoggedIn? (<Main name={name} setName={setName} semester={semester}  orderNo={orderNo}/>) :
+          <Login setIsLoggedIn={setIsLoggedIn} setName={setName} setSemester={setSemester} setOrderNo={setOrderNo} />
       }
     </div>
   )

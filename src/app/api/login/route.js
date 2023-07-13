@@ -1,7 +1,20 @@
 import { encrypt } from "@/utils/encryption";
 import { getSemester } from "@/utils/parser";
+import { ObjectId } from "mongodb";
 const randomHexString = () => Math.floor(Math.random() * 16).toString(16);
 const generateRandomHexString = (length) => [...Array(length)].map(randomHexString).join('');
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = process.env.MONGODB_URL
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+
 
 export async function POST(req) {
     const request = await req.json()
@@ -47,9 +60,22 @@ export async function POST(req) {
                 }
             })
 
+            // get and update counter mongodb
+            await client.connect()
+            const count = await client.db('etudier').collection("counter").findOneAndUpdate(
+                {
+                    name:"usercounter"
+
+                }, {
+                    $inc: {count:1}
+            })
+
+            var counter = count.value.count? ('000000000' + count.value.count).substr(-6) : "invalid"
+
             return new Response(JSON.stringify({
                 status: "success",
                 name: data.namaLengkap,
+                orderNo: counter,
                 semester: getSemester(await semester_res.text()),
             }), {
                 status: 200,

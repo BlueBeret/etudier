@@ -23,6 +23,7 @@ export default function Login(params) {
         }).then(res => res.json()).then(res => {
             if (res.status == "success") {
                 params.setName(res.name)
+                params.setOrderNo(res.orderNo)
                 params.setSemester(res.semester)
                 params.setIsLoggedIn(true)
                 Swal.close()

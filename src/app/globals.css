@@ -27,6 +27,23 @@
         -webkit-appearance: none;
         -moz-appearance: none; 
     }
+
+    .khs {
+        /* set image to cover no repeat */
+        font-size: 20px;
+        background-size: cover;
+        line-height: normal;
+        background-repeat: no-repeat;
+        font-family: Merchant;
+    }
+    .khs-default {
+        background-image: url("/static/default.jpg");
+    }
+}
+
+@font-face {
+    font-family: Merchant;
+    src: url("/static/merchant_copy/Merchant Copy.ttf");
 }
 
 .link-underline {
