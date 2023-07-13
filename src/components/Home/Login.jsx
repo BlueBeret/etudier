@@ -15,6 +15,7 @@ export default function Login(params) {
             }
         })
         fetch("/api/login", {
+            credentials: "include",
             method: "POST",
             body: JSON.stringify({
                 ugmId: ugmId,

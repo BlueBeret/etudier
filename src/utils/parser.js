@@ -33,9 +33,6 @@ const parseKHS = (rawhtml) => {
     })
     allData.khs = khs
 
-    console.log(allData)
-
-
     // find all <div align="center"></div>
     const divs = html.querySelectorAll('div[align="center"]')
     divs.forEach((div) => {

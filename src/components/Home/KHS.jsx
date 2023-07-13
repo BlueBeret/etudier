@@ -13,7 +13,7 @@ const generateRandomHexString = (length) => [...Array(length)].map(randomHexStri
 export default function Khs({ name, orderNo, data, theme, order_no }) {
     let date = new Date()
 
-    return <div className={`khs ${theme} flex flex-col w-[340px] px-4 items-center gap-3 hover:cursor-pointer`}>
+    return <div id="khs" className={`khs ${theme} flex flex-col w-[340px] px-4 items-center gap-3 hover:cursor-pointer`}>
         <div className="flex flex-col text-center pt-4 w-full">
             <h1 className={`${JustAnotherHandFont.className} text-[40px]`}>
                 Étudier

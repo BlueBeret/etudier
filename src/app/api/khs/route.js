@@ -4,6 +4,8 @@ import { parseKHS } from "@/utils/parser"
 export async function POST(req) {
     let cookies = req.headers.get('Cookie')
 
+    console.log(cookies)
+
     if (cookies) {
         const token = cookies.split(';').filter(item => item.trim().startsWith('token='))[0].split('=')[1]
         let decrypted_token = JSON.parse(decrypt(token))
@@ -11,7 +13,7 @@ export async function POST(req) {
         let semester = await req.json()
 
         semester = semester.semester
-        let url = `${process.env.KHS_URL}${semester}`
+        let url = "https://simaster.ugm.ac.id" `${process.env.KHS_URL}${semester}`
 
         const res = await fetch(url, {
             headers: {

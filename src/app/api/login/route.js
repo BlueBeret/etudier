@@ -19,7 +19,7 @@ const client = new MongoClient(uri, {
 export async function POST(req) {
     const request = await req.json()
 
-    const login_url = process.env.LOGIN_URL
+    const login_url ="https://simaster.ugm.ac.id" + process.env.LOGIN_URL
 
     const {
         ugmId,
@@ -52,7 +52,7 @@ export async function POST(req) {
 
             // get avaiable semester
 
-            const semester_res = await fetch(`${process.env.SEMESTER_URL}`, {
+            const semester_res = await fetch(`https://simaster.ugm.ac.id${process.env.SEMESTER_URL}`, {
                 headers: {
                     "Authorization": `Bearer ${data.sesId}`,
                     "User-Agent": "Etudier/1.0.0",
