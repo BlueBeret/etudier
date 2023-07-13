@@ -1,8 +1,5 @@
 import { encrypt } from "@/utils/encryption";
 import { getSemester } from "@/utils/parser";
-import { ObjectId } from "mongodb";
-const randomHexString = () => Math.floor(Math.random() * 16).toString(16);
-const generateRandomHexString = (length) => [...Array(length)].map(randomHexString).join('');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGODB_URL
 
@@ -26,7 +23,7 @@ export async function POST(req) {
         password
     } = request
 
-    const a_id = generateRandomHexString(16);
+    const a_id = '';  // intentional, to avoid flooding the login history
     try {
         const res = await fetch(login_url, {
             method: 'POST',
