@@ -80,7 +80,7 @@ export async function POST(req) {
             }), {
                 status: 200,
                 headers: {
-                    "Set-Cookie": `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; expires=${new Date(Date.now() + 1000 * 60 * 60 * 24).toUTCString()}`,
+                    "Set-Cookie": `token=${token}; Path=/; HttpOnly;  expires=${new Date(Date.now() + 1000 * 60 * 60 * 24).toUTCString()}`,
                     "Content-Type": "application/json",
                 }
             })
