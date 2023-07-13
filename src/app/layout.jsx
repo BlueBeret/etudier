@@ -17,12 +17,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest"></link>
+      </head>
       <body className={`${PoppinsFont.className} flex flex-col bg-primary`}>
         <Navbar />
         <main className='w-max-lg w-min-[360px] w-full mx-auto px-4'>
           {children}
         </main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   )
