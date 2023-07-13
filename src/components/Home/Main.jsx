@@ -36,21 +36,23 @@ export default function Main({ name, setName, semester, setSemester, orderNo }) 
                 }).catch(err => {
                     Swal.fire({
                         title: 'Error',
-                        html: `Something went wrong, please try again later. If this problem persists, please <a class="link" href="mailto:bugreport@lurifos.dev?body=I Would like to report this error ${err}>contact us</a>`,
+                        html: `Something went wrong, please try again later. If this problem persists, please <a class="link" href="mailto:bugreport@lurifos.dev?body=I Would like to report this error ${err}">contact us</a>`,
                     }
                     )
                 })
             } else {
+                res.text().then(textres =>
                 Swal.fire({
                     title: 'Error',
-                    html: `Something went wrong, please try again later. If this problem persists, please <a class="link" href="mailto:bugreport@lurifos.dev?body=I Would like to report this error ${err}>contact us</a>`,
+                    html: `Something went wrong, please try again later. If this problem persists, please <a class="link" href="mailto:bugreport@lurifos.dev?body=I Would like to report this error \`${btoa(encodeURIComponent(textres))}\`">contact us</a>`,
                 }
-                )
+                ))
             }
         }).catch(err => {
+            console.log(err)
             Swal.fire({
                 title: 'Error',
-                html: `Something went wrong, please try again later. If this problem persists, please <a class="link" href="mailto:bugreport@lurifos.dev?body=I Would like to report this error ${err}>contact us</a>`,
+                html: `Something went wrong, please try again later. If this problem persists, please <a class="link" href="mailto:bugreport@lurifos.dev?body=I Would like to report this error ${err}">contact us</a>`,
             }
             )
         })

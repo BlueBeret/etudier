@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    color: #283618;
+}
+
 @layer components {
     .navbar-container>* {
         @apply px-4 py-2 overflow-hidden max-w-[76px] sm:max-w-[900px] transition-all duration-500 ease-in-out;
