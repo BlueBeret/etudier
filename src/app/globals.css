@@ -39,6 +39,34 @@
     .khs-default {
         background-image: url("/static/default.jpg");
     }
+    .khs-default .themed-border{
+        border-color: black;
+    }
+
+    .khs-etudier {
+        color: #283618;
+        background-image: url("/static/etudier.jpg");
+    }
+
+    .khs-etudier .themed-border{
+        border-color: #283618;
+    }
+
+    .khs-neon {
+        color: yellow;
+        background-image: url("/static/neon.jpg");
+    }
+    .khs-neon svg{
+        color: yellow;
+    }
+
+    .khs-neon .themed-border{
+        border-color: yellow
+    }
+
+    .khs-neon img {
+        filter: invert();
+    }
 }
 
 @font-face {

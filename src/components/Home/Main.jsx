@@ -70,7 +70,8 @@ export default function Main({ name, setName, semester, setSemester, orderNo }) 
         </select>
         <select className="input-select" value={theme} onChange={(e) => setTheme(e.target.value)}>
             <option value="khs-default">Default Theme</option>
-            <option value={1}>Etudier</option>
+            <option value="khs-etudier">Etudier</option>
+            <option value="khs-neon">Neon</option>
         </select>
         <div className="w-[300px] flex justify-end">
             <button className="btn-primary" onClick={() => handlePrint()}>Generate</button>
