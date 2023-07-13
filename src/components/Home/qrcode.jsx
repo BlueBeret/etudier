@@ -1,8 +1,10 @@
 export default function Qrcode({theme}) {
     const themeColor = {
         "khs-default": "#000000",
-        "khs-neon": "#FFFF00",
-        "khs-etudier": "#283618"
+        "khs-neon": "#FFF",
+        "khs-etudier": "#283618",
+        "khs-witchgirl": "#56786a",
+        "khs-matrix": "#00ff00",
     }
     const css = `.background-color {
                         fill: transparent;

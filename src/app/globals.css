@@ -57,19 +57,34 @@ body {
     }
 
     .khs-neon {
-        color: yellow;
+        color: #fff;
+        text-shadow:
+            0 0 7px #fff;
         background-image: url("/static/neon.jpg");
-    }
-    .khs-neon svg{
-        color: yellow;
     }
 
     .khs-neon .themed-border{
-        border-color: yellow
+        border-color: #fff;
     }
 
-    .khs-neon img {
-        filter: invert();
+    .khs-witchgirl {
+        background-image: url("/static/witchgirl.jpg");
+        color: #56786a;
+    }
+
+    .khs-witchgirl .themed-border{
+        border-color: #56786a;
+    }
+
+    .khs-matrix {
+        /* background-color: #000; */
+        backdrop-filter: blur(5px);
+        background-image: url("/static/matrix.jpg");
+        color: #00ff00;
+         text-shadow: 4px 4px 8px #000;
+    }
+    .khs-matrix .themed-border{
+        border-color: #00ff00;
     }
 }
 

@@ -92,6 +92,8 @@ export default function Main({ name, setName, semester, setSemester, orderNo }) 
             <option value="khs-default">Default Theme</option>
             <option value="khs-etudier">Etudier</option>
             <option value="khs-neon">Neon</option>
+            <option value="khs-witchgirl">Witch Girl</option>
+            <option value="khs-matrix">Matrix</option>
         </select>
         <div className="w-[300px] flex justify-end">
             <button className="btn-primary" onClick={() => handlePrint()}>Generate</button>
